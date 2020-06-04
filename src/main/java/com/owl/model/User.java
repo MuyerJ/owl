@@ -3,8 +3,6 @@ package com.owl.model;
 import java.io.Serializable;
 
 public class User implements Serializable {
-
-
     /** 用户id */
     private String id;
 
@@ -25,5 +23,13 @@ public class User implements Serializable {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id='" + id + '\'' +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
