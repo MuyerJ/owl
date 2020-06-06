@@ -14,11 +14,38 @@
 
 
     <h4>springmvc注解测试</h4>
+
+    <h6>requestParam</h6>
     <form action="/owlmvc/annotation/requestParam" method="post">
         param1:<input name="param1" type="text" /><br>
         param2:<input name="param2" type="text" /><br>
         param3:<input name="param3" type="text" /><br>
-        <input type="submit" />
+        <input type="submit" /><br>
     </form>
+
+    <h6>requestBody</h6>
+    <button id="requestBody">测试requestBody</button>
+    <script src="jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script>
+        $(function () {
+            $("requestBody").click(function () {
+                console("test requestBody");
+                $.ajax({
+                    url:"/owlmvc/annotation/requestbody",
+                    type:"post",
+                    contentType:"application/json;charset=UTF-8",
+                    dataType:"json",
+                    data:JSON.stringify({
+                       id:"111",
+                       name:"yejiang"
+                    }),
+                    success:function (data) {
+                        console("success:"+data);
+                    }
+                })
+            })
+
+        })
+    </script>
 </body>
 </html>

@@ -1,5 +1,6 @@
 package com.owl.controller;
 
+import com.owl.model.User;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -35,11 +36,10 @@ public class MvcAnnotationController {
         return "annotation";
     }
 
-    /**
-     * 测试: RequestParam
-     */
 
     /**
+     * 测试: RequestParam
+     *
      * SpringMVC取参数有三种形式：
      *   @RequestParam注解到参数上 ：
      *      请求没有参数param1,会报错；可以通过required设置会false来解决这个报错问题(这个第二种没啥区别)
@@ -54,6 +54,21 @@ public class MvcAnnotationController {
         System.out.println(param2);
         String param3 = request.getParameter("param3");
         System.out.println(param3);
+        return "success";
+    }
+
+
+    /**
+     * 测试: RequestBody
+     *      说明：1.接收json数据，并封装到实体类中
+     *            2.只接收post的请求参数，不接受get请求
+     *            3.controller中不能有多个RequestBody
+     *
+     *
+     */
+    @RequestMapping(value = "requestbody",method = RequestMethod.POST)
+    public String testRequestBody(User user){
+        System.out.println(user);
         return "success";
     }
 }

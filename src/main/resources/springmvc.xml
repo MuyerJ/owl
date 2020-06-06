@@ -25,6 +25,6 @@
             </list>
         </property>
     </bean>
-    <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
+    <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
 </beans>
