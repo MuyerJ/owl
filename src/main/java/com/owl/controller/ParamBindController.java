@@ -26,8 +26,15 @@ public class ParamBindController {
         System.out.println("get:"+user);
         return "success";
     }
+
     @RequestMapping(value = "/postObject",method = RequestMethod.POST)
     public String postObject(User user){
+        System.out.println("post:"+user);
+        return "success";
+    }
+
+    @RequestMapping(value = "/postCollection",method = RequestMethod.POST)
+    public String postCollection(User user){
         System.out.println("post:"+user);
         return "success";
     }

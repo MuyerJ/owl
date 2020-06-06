@@ -24,11 +24,20 @@
     <br>
     <h7>POST请求：对象的参数绑定</h7>
     <form action="/owlmvc/param/postObject" method="post">
-        <input name="id" type="text"/>
-        <input name="name" type="text"/>
+        id:<input name="id" type="text"/><br>
+        name:<input name="name" type="text"/><br>
         <input type="submit"/>
     </form>
-    <h4>对象的参数绑定</h4>
+    <h4>集合参数绑定</h4>
+    <form action="/owlmvc/param/postCollection" method="post">
+        id:<input name="id" type="text"/><br>
+        name:<input name="name" type="text"/><br>
+        subject:<input name="subject[0]" type="text" /><br>
+        subject:<input name="subject[1]" type="text" /><br>
+        Math score:<input name="score[math]" type="text" /><br>
+        chinese score:<input name="score[chinese]" type="text" /><br>
+        <input type="submit"/>
+    </form>
     <br>
 </body>
 </html>

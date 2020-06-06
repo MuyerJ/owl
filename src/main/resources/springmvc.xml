@@ -15,6 +15,16 @@
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
+
+    <bean id="conversionServiceFactoryBean" class="org.springframework.context.support.ConversionServiceFactoryBean">
+        <property name="converters">
+            <list>
+                <bean class="com.owl.converter.DateConverter">
+                    <constructor-arg type="java.lang.String" value="yyyyMMdd"/>
+                </bean>
+            </list>
+        </property>
+    </bean>
+    <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
     <mvc:resources mapping="/js/**" location="/js/"/>
-    <mvc:annotation-driven/>
 </beans>
