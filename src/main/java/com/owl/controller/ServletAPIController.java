@@ -12,6 +12,8 @@ public class ServletAPIController {
     @RequestMapping(value = "/servlet")
     public String getServlet(HttpServletRequest request, HttpServletResponse response){
         System.out.println(request);
+        //获取请求的参数
+        request.getParameter("");
         System.out.println(response);
         return "success";
     }
