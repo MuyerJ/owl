@@ -2,6 +2,7 @@ package com.owl.controller;
 
 import com.owl.model.User;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -66,8 +67,9 @@ public class MvcAnnotationController {
      *
      *
      */
-    @RequestMapping(value = "requestbody",method = RequestMethod.POST)
-    public String testRequestBody(User user){
+    @RequestMapping(value = "/requestbody",method = RequestMethod.POST)
+    public String testRequestBody(@RequestBody User user){
+        //如果不加@RequestBody ：user并没有获取前端给的属性
         System.out.println(user);
         return "success";
     }

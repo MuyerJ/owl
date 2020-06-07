@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://www.springframework.org/tags" %>
 <%--
   Created by IntelliJ IDEA.
   User: 木叶小寒江
@@ -25,11 +26,11 @@
 
     <h6>requestBody</h6>
     <button id="requestBody">测试requestBody</button>
-    <script src="jquery-1.4.4.min.js" type="text/javascript"></script>
+    <script src='<c:url value="/static/js/jquery-1.4.4.min.js"/>'></script>
     <script>
         $(function () {
-            $("requestBody").click(function () {
-                console("test requestBody");
+            $("#requestBody").click(function () {
+                console.log("test requestBody");
                 $.ajax({
                     url:"/owlmvc/annotation/requestbody",
                     type:"post",
