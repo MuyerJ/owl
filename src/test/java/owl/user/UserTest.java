@@ -11,7 +11,6 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 import org.springframework.test.context.web.WebAppConfiguration;
 
 @RunWith(SpringJUnit4ClassRunner.class)
-@WebAppConfiguration(value = "src/main/webapp")
 @ContextConfiguration(locations={"classpath:/config/springmvc.xml","classpath:/config/mybatis.xml"})
 @ComponentScan(basePackages={"com.owl.controller", "com.owl.service","com.owl.dao"})
 public class UserTest {
