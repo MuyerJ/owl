@@ -26,4 +26,13 @@
         </property>
     </bean>
     <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
+
+    <mvc:interceptors>
+        <!--配置一个全局的拦截器-->
+        <bean class="com.owl.interceptor.GlobalInterceptor" />
+        <mvc:interceptor>
+            <mvc:mapping path="/hellomvc"/>
+            <bean class="com.owl.interceptor.HelloInterceptor"/>
+        </mvc:interceptor>
+    </mvc:interceptors>
 </beans>
