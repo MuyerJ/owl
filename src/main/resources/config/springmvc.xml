@@ -27,6 +27,9 @@
     </bean>
     <mvc:annotation-driven conversion-service="conversionServiceFactoryBean"/>
 
+    <!--将自定义的bean注册到spring容器中-->
+    <bean id="SelfHandAdapter" class="com.owl.adapter.SelfHandAdapter"></bean>
+
     <mvc:interceptors>
         <!--配置一个全局的拦截器-->
         <bean class="com.owl.interceptor.GlobalInterceptor" />
