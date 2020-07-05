@@ -1,4 +1,4 @@
-package com.owl.leetcode;
+package com.owl.studypack.leetcode;
 
 
 import java.util.HashSet;

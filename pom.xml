@@ -21,6 +21,7 @@
     </properties>
 
     <dependencies>
+        <!--Spring 相关-->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -46,7 +47,28 @@
             <artifactId>jsp-api</artifactId>
             <version>2.2</version>
         </dependency>
-
+        <!--爬虫相关
+          1.HttpClient:请求数据
+          2.fastJson：解析数据
+          -->
+        <!-- https://mvnrepository.com/artifact/org.apache.httpcomponents/httpclient -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.5.2</version>
+            <exclusions>
+                <exclusion>
+                    <artifactId>commons-logging</artifactId>
+                    <groupId>commons-logging</groupId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+        <!-- fastJSON驱动 -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.39</version>
+        </dependency>
         <!-- Log4j -->
         <dependency>
             <groupId>log4j</groupId>
@@ -114,6 +136,11 @@
             <artifactId>spring-test</artifactId>
             <version>4.3.11.RELEASE</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>1.8.2</version>
         </dependency>
     </dependencies>
 
